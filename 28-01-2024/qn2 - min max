@@ -1,0 +1,10 @@
+arr.sort()
+
+    # Calculate the sum of all elements
+    total_sum = sum(arr)
+
+    # Calculate the minimum and maximum sums by excluding the smallest and largest elements
+    min_sum = total_sum - arr[-1]
+    max_sum = total_sum - arr[0]
+
+    print(min_sum, max_sum)
