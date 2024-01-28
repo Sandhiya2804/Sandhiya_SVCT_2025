@@ -1,0 +1,8 @@
+total_candies = 0
+
+    for operation in operations:
+        a, b, k = operation
+        total_candies += (b - a + 1) * k
+
+    average_candies = total_candies // n
+    return average_candies
