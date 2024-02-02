@@ -1,0 +1,28 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        # Check if lengths are different
+        if len(s) != len(t):
+            return False
+        
+        # Initialize a dictionary to store character counts
+        char_count = {}
+        
+        # Count characters in string s
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+        
+        # Decrement character counts for string t
+        for char in t:
+            if char not in char_count:
+                return False
+            char_count[char] -= 1
+            if char_count[char] < 0:
+                return False
+        
+        # Check if all counts are zero
+        return all(count == 0 for count in char_count.values())
+
+# Example usage:
+solution = Solution()
+print(solution.isAnagram("anagram", "nagaram"))  # Output: True
+print(solution.isAnagram("rat", "car"))          # Output: False
